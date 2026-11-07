@@ -9,7 +9,6 @@ class CalcModel(nn.Module):
         self.blocks = nn.ModuleList()
         for idx in range(len(self.integrated_levels)-1):
             self.blocks.append(nn.Linear(in_features=self.integrated_levels[idx], out_features=self.integrated_levels[idx+1]))
-            print(self.integrated_levels[idx+1])
         self.relu = nn.ReLU()
     
     def forward(self, x):
